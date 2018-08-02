@@ -7,6 +7,9 @@ data["scripts"] = {
   };
 
 var fs = require('fs');
-fs.writeFile('package.json', JSON.stringify(data, null, '    '));
+fs.writeFile('package.json', JSON.stringify(data, null, '    '), "utf8",
+ function (err) {
+  console.log(err);
+});
 
 

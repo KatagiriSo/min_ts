@@ -1,10 +1,12 @@
+var path = require('path');
+
 module.exports = {
   // or production
   mode: 'development',
 
   entry: {
-    main:'./src/main.ts',
-    menu:'./src/menu.ts'},
+    main:'./src/main.ts'
+  },
 
   module: {
     rules: [
@@ -18,10 +20,12 @@ module.exports = {
       }
     ]
   },
-  // for import
   resolve: {
-    extensions: [
-      '.ts'
-    ]
+    modules: ['node_modules'],
+    extensions: ['.ts', '.js', '.json', '.jsx']
+  },
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'html/js/dist')
   }
 };
